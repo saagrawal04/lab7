@@ -35,12 +35,15 @@ class ListExamples {
       }
     }
     while(index1 < list1.size()) {
-      result.add(list1.get(index1));
+     if (index2 == 0 || !list1.get(index1).equals(list1.get(index1 - 1))) {
+            result.add(list1.get(index1));
+        }
       index1 += 1;
     }
     while(index2 < list2.size()) {
-      result.add(list2.get(index2));
-      // change index1 below to index2 to fix test
+      if (index2 == 0 || !list2.get(index2).equals(list2.get(index2 - 1))) {
+            result.add(list2.get(index2));
+        }
       index2 += 1;
     }
     return result;
